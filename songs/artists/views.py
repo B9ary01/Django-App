@@ -42,5 +42,7 @@ def home(request):
 
 
 def song(req):
-    return HttpResponse("<h1>Welcome to the <bold>Songs</bold> page!</h1>")
+    data = {'songs':songs}
+    return render(req, 'artist.html', data)
+
 
