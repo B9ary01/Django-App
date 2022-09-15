@@ -1,8 +1,9 @@
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 
-#from .models import Animal
+from .models import Artist
+"""
 songs=[
     {
     "id":0,
@@ -34,15 +35,18 @@ songs=[
 
 
 ]
+"""
 
 def home(request):
-    return render(request, 'home.html', {"songs":songs})
+    data = {'songs': Artist.objects.all()}
+    return render(request, 'home.html', data)
+   
 
 
 
 
 def song(req):
-    data = {'songs':songs}
+    data = {'songs':Artist.objects.all()}
     return render(req, 'artist.html', data)
 
 
@@ -52,6 +56,9 @@ def contact(req):
 
 
 def show(req,id):
-    song=[s for s in songs if s["id"]==id]
-    return render(req, 'show.html', {"songs":song})
+    #song=get_object_or_404(Artist.objects.all(), pk=id)
+    #song=[s for s in songs if s["id"]==id]
+    #return render(req, 'show.html', {"song":song})
+    song=get_object_or_404(Artist, pk=id)
+    return render(req, 'artist.html', {"artist":song})
 
