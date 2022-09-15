@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1> Register </h1> 
+{% endblock header %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <input type="submit" value="Register">
+
+
+</form>
+<p>Already Registered! Go to <a href="{% url 'artists-login' %}">Login page</a></p>
+{% endblock content %}
