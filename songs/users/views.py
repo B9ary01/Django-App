@@ -12,7 +12,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get("username")
             messages.success(request, f"User '{username}' successfully created")
-            return redirect('animals-home')
+            return redirect('artists-home')
             
     else:
         form = UserRegistrationForm()

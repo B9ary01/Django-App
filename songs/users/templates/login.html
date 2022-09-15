@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>Register </h1> 
+{% endblock header %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <input type="submit" value="Login">
+
+
+</form>
+<a href="{% url 'user-register' %}">register for new account</a>
+<p>this is a not found apge! Go to <a href="{% url 'artists-home' %}">Home</a></p>
+{% endblock content %}
