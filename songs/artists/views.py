@@ -47,7 +47,7 @@ def home(request):
 
 def song(req):
     data = {'songs':Artist.objects.all()}
-    return render(req, 'artist.html', data)
+    return render(req, 'show.html', data)
 
 
 
