@@ -46,3 +46,7 @@ def song(req):
     return render(req, 'artist.html', data)
 
 
+
+def contact(req):
+    return render(req, 'contact.html')
+
