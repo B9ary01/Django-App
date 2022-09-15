@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block header %} Artist Page {% endblock header %}
+
+{% block content %}
+
+<ul>
+    <h3>Songs - Singers</h3>   
+{% for song in songs %}
+
+<li>{{ song.name}} - {{ song.singer}}</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

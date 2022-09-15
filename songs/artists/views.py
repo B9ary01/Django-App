@@ -50,3 +50,8 @@ def song(req):
 def contact(req):
     return render(req, 'contact.html')
 
+
+def show(req,id):
+    song=[s for s in songs if s["id"]==id]
+    return render(req, 'show.html', {"songs":song})
+
